@@ -72,6 +72,9 @@ func parseLine(line string) (string, string, error) {
 	return subs[0], strings.Trim(subs[1], "\"'"), nil
 }
 
+// Parse parses the os-release file pointing to by OSReleasePath.
+// Return a struct containing the known fields.
+// Fields that not exist will be an empty string.
 func Parse() (OSRelease, error) {
 
 	lines, err := getLines()
